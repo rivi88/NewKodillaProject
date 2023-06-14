@@ -20,16 +20,16 @@ public class TaskController {
         return new TaskDto(1L, "test title", "test_content");
     }
 
-    @DeleteMapping()
-    public void deleteTask(Long taskId) {
+    @DeleteMapping("delete/{id}")
+    public void deleteTask(@PathVariable(name = "id") Long taskId) {
     }
 
-    @PostMapping
+    @PostMapping(value = "update")
     public TaskDto updateTask(@RequestBody TaskDto taskDto) {
         return new TaskDto(1L, "Edited test title", "Test content");
     }
 
-    @PutMapping
+    @PutMapping(value =  "create")
     public void createTask(@RequestBody TaskDto taskDto) {
 
     }
